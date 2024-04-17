@@ -110,7 +110,7 @@ def main():
     ckpt_path = f"{model_name}.bin"
 
     url = "http://images.cocodataset.org/val2017/000000039769.jpg"
-    image = Image.open(requests.get(url, stream=True).raw)
+    image = Image.open(requests.get(url, stream=True, timeout=60).raw)
     feature_extractor = ViTFeatureExtractor.from_pretrained(
         "google/vit-base-patch16-224-in21k"
     )
