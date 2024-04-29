@@ -1,6 +1,7 @@
 """
 Export Hugging Face BERT models to hdf5 format.
 """
+
 import os
 import h5py
 import numpy as np
@@ -67,9 +68,11 @@ def extract_bert_weights(
 
     encoder_state_dict = OrderedDict(
         [
-            (_insert_final(k), v)
-            if len(k.split(".")) > 3 and k.split(".")[3] == "output"
-            else (k, v)
+            (
+                (_insert_final(k), v)
+                if len(k.split(".")) > 3 and k.split(".")[3] == "output"
+                else (k, v)
+            )
             for k, v in encoder_state_dict.items()
         ]
     )

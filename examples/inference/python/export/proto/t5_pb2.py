@@ -1209,7 +1209,7 @@ T5EncoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _T5ENCODERLAYER,
-        "__module__": "t5_pb2"
+        "__module__": "t5_pb2",
         # @@protoc_insertion_point(class_scope:T5EncoderLayer)
     },
 )
@@ -1220,7 +1220,7 @@ T5DecoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _T5DECODERLAYER,
-        "__module__": "t5_pb2"
+        "__module__": "t5_pb2",
         # @@protoc_insertion_point(class_scope:T5DecoderLayer)
     },
 )
@@ -1231,7 +1231,7 @@ T5EmbeddingLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _T5EMBEDDINGLAYER,
-        "__module__": "t5_pb2"
+        "__module__": "t5_pb2",
         # @@protoc_insertion_point(class_scope:T5EmbeddingLayer)
     },
 )
@@ -1242,7 +1242,7 @@ T5ModelConf = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _T5MODELCONF,
-        "__module__": "t5_pb2"
+        "__module__": "t5_pb2",
         # @@protoc_insertion_point(class_scope:T5ModelConf)
     },
 )
@@ -1253,7 +1253,7 @@ T5 = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _T5,
-        "__module__": "t5_pb2"
+        "__module__": "t5_pb2",
         # @@protoc_insertion_point(class_scope:T5)
     },
 )

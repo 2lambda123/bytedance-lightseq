@@ -3,6 +3,7 @@ Export Fairseq Transformer models training with LightSeq modules
 to int8 protobuf format using post training quantization.
 Refer to the `examples/training/fairseq` directory for more training details.
 """
+
 import torch
 from export.proto.quant_transformer_pb2 import QuantTransformer
 from lightseq.training import (

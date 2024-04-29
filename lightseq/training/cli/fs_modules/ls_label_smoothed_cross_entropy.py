@@ -107,11 +107,11 @@ class LSLabelSmoothedCrossEntropyCriterion(FairseqCriterion):
             metrics.log_scalar("n_correct", n_correct)
             metrics.log_derived(
                 "accuracy",
-                lambda meters: round(
-                    meters["n_correct"].sum * 100.0 / meters["total"].sum, 3
-                )
-                if meters["total"].sum > 0
-                else float("nan"),
+                lambda meters: (
+                    round(meters["n_correct"].sum * 100.0 / meters["total"].sum, 3)
+                    if meters["total"].sum > 0
+                    else float("nan")
+                ),
             )
 
     @staticmethod

@@ -1821,7 +1821,7 @@ QuantEncoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _QUANTENCODERLAYER,
-        "__module__": "quant_transformer_pb2"
+        "__module__": "quant_transformer_pb2",
         # @@protoc_insertion_point(class_scope:QuantEncoderLayer)
     },
 )
@@ -1832,7 +1832,7 @@ QuantDecoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _QUANTDECODERLAYER,
-        "__module__": "quant_transformer_pb2"
+        "__module__": "quant_transformer_pb2",
         # @@protoc_insertion_point(class_scope:QuantDecoderLayer)
     },
 )
@@ -1843,7 +1843,7 @@ QuantEmbeddingLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _QUANTEMBEDDINGLAYER,
-        "__module__": "quant_transformer_pb2"
+        "__module__": "quant_transformer_pb2",
         # @@protoc_insertion_point(class_scope:QuantEmbeddingLayer)
     },
 )
@@ -1854,7 +1854,7 @@ QuantModelConf = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _QUANTMODELCONF,
-        "__module__": "quant_transformer_pb2"
+        "__module__": "quant_transformer_pb2",
         # @@protoc_insertion_point(class_scope:QuantModelConf)
     },
 )
@@ -1865,7 +1865,7 @@ QuantTransformer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _QUANTTRANSFORMER,
-        "__module__": "quant_transformer_pb2"
+        "__module__": "quant_transformer_pb2",
         # @@protoc_insertion_point(class_scope:QuantTransformer)
     },
 )

@@ -1,6 +1,5 @@
 """Convert BART checkpoint."""
 
-
 import argparse
 from pathlib import Path
 

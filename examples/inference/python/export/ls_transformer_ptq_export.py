@@ -2,6 +2,7 @@
 Export LightSeq Transformer models to int8 protobuf format using post training quantization.
 Refer to the `examples/training/custom` directory for more training details.
 """
+
 import argparse
 import time
 import numpy as np

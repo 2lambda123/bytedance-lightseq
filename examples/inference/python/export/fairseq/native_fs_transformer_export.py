@@ -2,6 +2,7 @@
 Export native Fairseq Transformer models to protobuf/hdf5 format.
 Refer to the `examples/training/fairseq` directory for more training details.
 """
+
 from collections import OrderedDict
 
 import torch
