@@ -578,9 +578,9 @@ def export_ls_quant_encoder(
         }
     )
     if has_cache:
-        mapping_dict[
-            "self_qkv_bias_out_clip_max"
-        ] = "para&&expression_[{0}:{1}][11]".format(offsets[12], offsets[13])
+        mapping_dict["self_qkv_bias_out_clip_max"] = (
+            "para&&expression_[{0}:{1}][11]".format(offsets[12], offsets[13])
+        )
     fill_quant_encdec_weight(file, state_dict, mapping_dict, True, save_pb)
 
 

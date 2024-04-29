@@ -1,6 +1,7 @@
 """
 Export Hugging Face ViT models to hdf5 format.
 """
+
 import os
 import h5py
 from collections import OrderedDict
@@ -68,9 +69,11 @@ def extract_vit_weights(
 
     encoder_state_dict = OrderedDict(
         [
-            (_insert_final(k), v)
-            if len(k.split(".")) > 3 and k.split(".")[3] == "output"
-            else (k, v)
+            (
+                (_insert_final(k), v)
+                if len(k.split(".")) > 3 and k.split(".")[3] == "output"
+                else (k, v)
+            )
             for k, v in encoder_state_dict.items()
         ]
     )

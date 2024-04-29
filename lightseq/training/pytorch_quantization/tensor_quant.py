@@ -399,9 +399,9 @@ def _tensor_quant(inputs, amax, num_bits=8, unsigned=False, narrow_range=True):
     outputs = torch.clamp(outputs, min_bound, max_bound)
 
     if min_amax <= epsilon:
-        scale[
-            zero_amax_mask
-        ] = 1.0  # Return 1 makes more sense for values quantized to 0 with amax=0
+        scale[zero_amax_mask] = (
+            1.0  # Return 1 makes more sense for values quantized to 0 with amax=0
+        )
 
     # if input_dtype == torch.half:
     #     outputs = outputs.half()

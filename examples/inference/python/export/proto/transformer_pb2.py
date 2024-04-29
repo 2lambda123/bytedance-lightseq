@@ -1212,7 +1212,7 @@ EncoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _ENCODERLAYER,
-        "__module__": "lightseq.transformer_pb2"
+        "__module__": "lightseq.transformer_pb2",
         # @@protoc_insertion_point(class_scope:EncoderLayer)
     },
 )
@@ -1223,7 +1223,7 @@ DecoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _DECODERLAYER,
-        "__module__": "lightseq.transformer_pb2"
+        "__module__": "lightseq.transformer_pb2",
         # @@protoc_insertion_point(class_scope:DecoderLayer)
     },
 )
@@ -1234,7 +1234,7 @@ EmbeddingLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _EMBEDDINGLAYER,
-        "__module__": "lightseq.transformer_pb2"
+        "__module__": "lightseq.transformer_pb2",
         # @@protoc_insertion_point(class_scope:EmbeddingLayer)
     },
 )
@@ -1245,7 +1245,7 @@ ModelConf = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MODELCONF,
-        "__module__": "lightseq.transformer_pb2"
+        "__module__": "lightseq.transformer_pb2",
         # @@protoc_insertion_point(class_scope:ModelConf)
     },
 )
@@ -1256,7 +1256,7 @@ Transformer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _TRANSFORMER,
-        "__module__": "lightseq.transformer_pb2"
+        "__module__": "lightseq.transformer_pb2",
         # @@protoc_insertion_point(class_scope:Transformer)
     },
 )

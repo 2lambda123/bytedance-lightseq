@@ -2,6 +2,7 @@
 BART: Denoising Sequence-to-Sequence Pre-training for
 Natural Language Generation, Translation, and Comprehension
 """
+
 import logging
 from typing import Optional
 
@@ -308,9 +309,9 @@ class LSBARTModel(LSTransformerModel):
                 for m in ("weight", "bias"):
                     k = "{}.layers.{}.layer_norms.{}.{}".format(name, i, old, m)
                     if k in state_dict:
-                        state_dict[
-                            "{}.layers.{}.{}.{}".format(name, i, new, m)
-                        ] = state_dict[k]
+                        state_dict["{}.layers.{}.{}.{}".format(name, i, new, m)] = (
+                            state_dict[k]
+                        )
                         del state_dict[k]
 
     def upgrade_attn_state_dict_named(self, state_dict, name):

@@ -20,6 +20,7 @@ clip_max = random.random() * 100
 if clip_max < 0:
     clip_max = -clip_max
 
+
 # normal quant test
 def custom_quant(input, scale, unsigned=False):
     res = input.float() / scale
