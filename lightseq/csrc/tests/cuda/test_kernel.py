@@ -1,9 +1,8 @@
 import sys
 from __init__ import lightseq_dir
+import secrets
 
 sys.path.insert(0, lightseq_dir)
-
-import random
 import torch
 from torch._C import ScriptModule, dtype
 from torch.nn import functional
@@ -21,7 +20,7 @@ def test_launch_bias_add_transform_20314():
     hidden_dim = kt.hidden_dim
     nhead = kt.nhead
     head_dim = int(hidden_dim / nhead)
-    count = random.randint(1, 20)
+    count = secrets.SystemRandom().randint(1, 20)
     print(
         "(batch_size, seq_len, count, nhead, head_dim): "
         f"({batch_size}, {seq_len}, {count}, {nhead}, {head_dim})"
@@ -63,7 +62,7 @@ def test_launch_bias_add_transform_20314_new():
     hidden_dim = kt.hidden_dim
     nhead = kt.nhead
     head_dim = int(hidden_dim / nhead)
-    count = random.randint(1, 3)
+    count = secrets.SystemRandom().randint(1, 3)
     print(
         "(batch_size, seq_len, count, nhead, head_dim): "
         f"({batch_size}, {seq_len}, {count}, {nhead}, {head_dim})"
@@ -151,7 +150,7 @@ def test_launch_transform4d_0213():
     hidden_dim = kt.hidden_dim
     nhead = kt.nhead
     head_dim = int(hidden_dim / nhead)
-    trans_count = random.choice([1, 3])
+    trans_count = secrets.choice([1, 3])
     print(
         "(batch_size, seq_len, hidden_dim, nhead, trans_count): "
         f"({batch_size}, {seq_len}, {hidden_dim}, {nhead}, {trans_count})"
@@ -186,10 +185,10 @@ def test_launch_transform4d_0213():
 @kt.case(atol=1e-3, rtol=1e-3, ntest=20)
 def test_launch_attn_softmax():
     batch_size, from_len = kt.bs_sl()
-    is_dec_self_attn = random.choice([True, False])
+    is_dec_self_attn = secrets.choice([True, False])
     if is_dec_self_attn:
         to_len = from_len
-        is_dec_self_attn_infer = random.choice([True, False])
+        is_dec_self_attn_infer = secrets.choice([True, False])
     else:
         _, to_len = kt.bs_sl(batch_size)
         is_dec_self_attn_infer = False
@@ -197,7 +196,7 @@ def test_launch_attn_softmax():
     if is_dec_self_attn_infer:
         to_len = from_len
         from_len = 1
-        beam_size = random.choice([3, 4, 5])
+        beam_size = secrets.choice([3, 4, 5])
         batch_size *= beam_size
 
     nhead = kt.nhead
@@ -254,10 +253,10 @@ def test_launch_attn_softmax():
 @kt.case(atol=1e-3, rtol=1e-3, ntest=2)
 def test_launch_attn_softmax_new():
     batch_size, from_len = kt.bs_sl()
-    is_dec_self_attn = random.choice([True, False])
+    is_dec_self_attn = secrets.choice([True, False])
     if is_dec_self_attn:
         to_len = from_len
-        is_dec_self_attn_infer = random.choice([True, False])
+        is_dec_self_attn_infer = secrets.choice([True, False])
     else:
         _, to_len = kt.bs_sl(batch_size)
         is_dec_self_attn_infer = False
@@ -265,7 +264,7 @@ def test_launch_attn_softmax_new():
     if is_dec_self_attn_infer:
         to_len = from_len
         from_len = 1
-        beam_size = random.choice([3, 4, 5])
+        beam_size = secrets.choice([3, 4, 5])
         batch_size *= beam_size
 
     nhead = kt.nhead
@@ -453,7 +452,7 @@ def test_launch_layer_norm():
     batch_size, seq_len = kt.bs_sl()
     bsz_seq = batch_size * seq_len
     hidden_dim = kt.hidden_dim
-    with_mean = random.choice([True, False])
+    with_mean = secrets.choice([True, False])
     print(
         "(batch_token_num, hidden_dim, with_mean): "
         f"({bsz_seq}, {hidden_dim}, {with_mean})"
@@ -496,7 +495,7 @@ def test_launch_layer_norm_i8O():
     batch_size, seq_len = kt.bs_sl()
     bsz_seq = batch_size * seq_len
     hidden_dim = kt.hidden_dim
-    with_mean = random.choice([True, False])
+    with_mean = secrets.choice([True, False])
     print(
         "(batch_token_num, hidden_dim, with_mean): "
         f"({bsz_seq}, {hidden_dim}, {with_mean})"
@@ -570,8 +569,8 @@ def test_launch_ln_bw():
     batch_size, seq_len = kt.bs_sl()
     bsz_seq = batch_size * seq_len
     hidden_dim = kt.hidden_dim
-    with_mean = random.choice([True, False])
-    fuse_add = random.choice([True, False])
+    with_mean = secrets.choice([True, False])
+    fuse_add = secrets.choice([True, False])
     print(
         "(batch_token_num, hidden_dim, with_mean, fuse_add): "
         f"({bsz_seq}, {hidden_dim}, {with_mean}, {fuse_add})"
@@ -653,8 +652,8 @@ def test_launch_ln_i8O_bw():
     batch_size, seq_len = kt.bs_sl()
     bsz_seq = batch_size * seq_len
     hidden_dim = kt.hidden_dim
-    with_mean = random.choice([True, False])
-    fuse_add = random.choice([True, False])
+    with_mean = secrets.choice([True, False])
+    fuse_add = secrets.choice([True, False])
     print(
         "(batch_token_num, hidden_dim, with_mean, fuse_add): "
         f"({bsz_seq}, {hidden_dim}, {with_mean}, {fuse_add})"
@@ -744,7 +743,7 @@ def test_launch_ln_i8O_bw():
 def test_launch_ffn_bias_bwd():
     batch_size, seq_len = kt.bs_sl()
     hidden_dim = kt.hidden_dim
-    coef = random.randint(1, 4)
+    coef = secrets.SystemRandom().randint(1, 4)
     print(f"(rows, cols): ({batch_size*seq_len}, {coef*hidden_dim})")
 
     val = kt.rand((batch_size * seq_len, coef * hidden_dim))
@@ -782,9 +781,9 @@ def test_launch_concat3_dim1():
     nhead = kt.nhead
     head_dim = int(hidden_dim / nhead)
     assert seq_len > 1
-    sl1 = random.randint(1, seq_len - 1)
+    sl1 = secrets.SystemRandom().randint(1, seq_len - 1)
     sl2 = seq_len - sl1
-    beam_size = random.randint(1, 8)
+    beam_size = secrets.SystemRandom().randint(1, 8)
     print(
         f"(batch_size, beam_size, nhead, sl1, sl2, head_dim): {batch_size},"
         f" {beam_size}, {nhead}, {sl1}, {sl2}, {head_dim}"
@@ -1354,7 +1353,7 @@ def test_launch_quant_bias_add_transform_20314():
     hidden_dim = kt.hidden_dim
     nhead = kt.nhead
     head_dim = int(hidden_dim / nhead)
-    count = random.randint(1, 20)
+    count = secrets.SystemRandom().randint(1, 20)
     print(
         "(batch_size, seq_len, count, nhead, head_dim): "
         f"({batch_size}, {seq_len}, {count}, {nhead}, {head_dim})"
@@ -1413,7 +1412,7 @@ def test_launch_quant_transform4d_0213():
     hidden_dim = kt.hidden_dim
     nhead = kt.nhead
     head_dim = int(hidden_dim / nhead)
-    trans_count = random.choice([1, 3])
+    trans_count = secrets.choice([1, 3])
     print(
         "(batch_size, seq_len, hidden_dim, nhead, trans_count): "
         f"({batch_size}, {seq_len}, {hidden_dim}, {nhead}, {trans_count})"
@@ -1581,8 +1580,8 @@ def test_split_rotary_position_qkv():
     nhead = kt.nhead
     head_dim = 128
     seq_len = 1
-    seq_len = random.randint(1, 2048)
-    offset_seq_len = random.randint(0, 2048 - seq_len)
+    seq_len = secrets.SystemRandom().randint(1, 2048)
+    offset_seq_len = secrets.SystemRandom().randint(0, 2048 - seq_len)
     outshape = kt.rand((batch_size, nhead, seq_len, head_dim))
 
     cachek = kt.rand((batch_size, nhead, offset_seq_len, head_dim))

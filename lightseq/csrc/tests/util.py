@@ -1,9 +1,9 @@
-import random
 import time
 from collections import OrderedDict
 
 import numpy as np
 import torch
+import secrets
 
 max_batch_tokens = 9216
 max_seq_len = 1024
@@ -27,12 +27,12 @@ class TestDecorator(object):
 
     def bs_sl(self, batch_size=None, enable_quant=False):
         if batch_size is None:
-            seq_len = random.randint(1, self.max_seq_len)
+            seq_len = secrets.SystemRandom().randint(1, self.max_seq_len)
             max_batch_size = self.max_batch_tokens // seq_len
-            batch_size = random.randint(1, max_batch_size)
+            batch_size = secrets.SystemRandom().randint(1, max_batch_size)
         else:
             max_seq_len = min(self.max_batch_tokens // batch_size, self.max_seq_len)
-            seq_len = random.randint(1, max_seq_len)
+            seq_len = secrets.SystemRandom().randint(1, max_seq_len)
 
         if enable_quant and seq_len < 8:
             return self.bs_sl(batch_size, enable_quant)
@@ -42,7 +42,7 @@ class TestDecorator(object):
     @property
     def hidden_dim(self):
         upbound = 1024 // self.nhead
-        head_dim = random.choice(range(1, upbound + 1))
+        head_dim = secrets.choice(range(1, upbound + 1))
         hs = head_dim * self.nhead * self.io_factor
         return hs
 
@@ -127,7 +127,7 @@ class TestDecorator(object):
             dtype = self.dtype
         mask = torch.zeros((batch_size, seq_len))
         for b in range(batch_size):
-            valid_seq_len = random.randint(1, seq_len)
+            valid_seq_len = secrets.SystemRandom().randint(1, seq_len)
             mask[b, valid_seq_len:] = 1
         return mask.to(self.device, dtype=dtype)
 

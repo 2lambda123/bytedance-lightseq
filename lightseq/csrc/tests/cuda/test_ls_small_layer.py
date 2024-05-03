@@ -1,5 +1,4 @@
 import __init__
-import random
 import math
 from copy import deepcopy
 from dataclasses import dataclass
@@ -9,6 +8,7 @@ from torch.nn import functional
 
 from csrc.tests.util import TestDecorator
 from csrc.pytorch.builder.cuda_layer_builder import CudaLayerBuilder
+import secrets
 
 kt = TestDecorator()
 layer_module = CudaLayerBuilder().load()
@@ -21,13 +21,13 @@ def test_sdpa_layer():
     nhead = kt.nhead
     batch_head = batch_size * nhead
     head_dim = int(hidden_dim / nhead)
-    max_seq_len = random.randint(q_len, q_len + 10)
-    max_batch_size = random.randint(batch_size, batch_size + 10)
+    max_seq_len = secrets.SystemRandom().randint(q_len, q_len + 10)
+    max_batch_size = secrets.SystemRandom().randint(batch_size, batch_size + 10)
     max_batch_tokens = max_seq_len * max_batch_size
 
     mask_future = None
 
-    q_kv_same_len = random.choice([0, 1])
+    q_kv_same_len = secrets.choice([0, 1])
     if q_kv_same_len == 1:
         kv_len = q_len
         torch_mask = kt.dec_self_attn_mask(kv_len) * -1e8
@@ -36,7 +36,7 @@ def test_sdpa_layer():
         torch_mask = torch_mask.to(torch.float32)
         mask_future = True
     else:
-        kv_len = random.randint(1, max_seq_len)
+        kv_len = secrets.SystemRandom().randint(1, max_seq_len)
         torch_mask = None
         mask_future = False
 

@@ -19,7 +19,6 @@
 
 import logging
 import os
-import random
 import sys
 from dataclasses import dataclass, field
 from typing import Optional
@@ -51,6 +50,7 @@ from examples.training.huggingface.bert.ls_hf_transformer_layer import (
     LSBertForSequenceClassification,
 )
 from examples.training.huggingface.gcq import LSTrainer, GCQArguments
+import secrets
 
 # Will error if the minimal version of Transformers is not installed. Remove at your own risks.
 check_min_version("4.8.0")
@@ -558,7 +558,7 @@ def main():
 
     # Log a few random samples from the training set:
     if training_args.do_train:
-        for index in random.sample(range(len(train_dataset)), 3):
+        for index in secrets.SystemRandom().sample(range(len(train_dataset)), 3):
             logger.info(f"Sample {index} of the training set: {train_dataset[index]}.")
 
     # Get the metric function
