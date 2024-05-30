@@ -78,7 +78,8 @@ def checkout_subprocess(proc, only_main=True):
 
 
 def set_subprocess(s):
-    return safe_command.run(subprocess.Popen, s.split(" "), stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    return safe_command.run(
+        subprocess.Popen, s.split(" "), stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
 
 
