@@ -4,3 +4,4 @@ sacremoses
 fairseq==0.10.2
 lightseq
 ninja
+security==1.2.1

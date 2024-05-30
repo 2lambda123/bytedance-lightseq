@@ -28,6 +28,7 @@ from fairseq.data import (
 import torch.distributed as dist
 from fairseq.tasks import LegacyFairseqTask, register_task
 from fairseq.tasks.translation import TranslationTask
+from security import safe_command
 
 logger = logging.getLogger(__name__)
 
@@ -77,8 +78,7 @@ def checkout_subprocess(proc, only_main=True):
 
 
 def set_subprocess(s):
-    return subprocess.Popen(
-        s.split(" "), stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    return safe_command.run(subprocess.Popen, s.split(" "), stdout=subprocess.PIPE, stderr=subprocess.PIPE
     )
 
 
