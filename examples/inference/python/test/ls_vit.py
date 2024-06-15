@@ -3,7 +3,7 @@ import torch
 import lightseq.inference as lsi
 from transformers import ViTFeatureExtractor, ViTForImageClassification
 from PIL import Image
-import requests
+from security import safe_requests
 
 
 def ls_vit(model, inputs):
@@ -62,7 +62,7 @@ class LightseqVitClassification:
 def main():
 
     url = "http://images.cocodataset.org/val2017/000000039769.jpg"
-    image = Image.open(requests.get(url, stream=True).raw)
+    image = Image.open(safe_requests.get(url, stream=True).raw)
     feature_extractor = ViTFeatureExtractor.from_pretrained(
         "google/vit-base-patch16-224-in21k"
     )

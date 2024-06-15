@@ -1,5 +1,4 @@
 import time
-import requests
 
 from PIL import Image
 import torch
@@ -10,6 +9,7 @@ from lightseq.training.ops.pytorch.torch_transformer_layers import (
     TransformerEncoderLayer,
 )
 from export.util import parse_args
+from security import safe_requests
 
 
 def ls_vit(model, inputs):
@@ -110,7 +110,7 @@ def main():
     ckpt_path = f"{model_name}.bin"
 
     url = "http://images.cocodataset.org/val2017/000000039769.jpg"
-    image = Image.open(requests.get(url, stream=True).raw)
+    image = Image.open(safe_requests.get(url, stream=True).raw)
     feature_extractor = ViTFeatureExtractor.from_pretrained(
         "google/vit-base-patch16-224-in21k"
     )
