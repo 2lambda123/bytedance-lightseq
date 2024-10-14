@@ -3,6 +3,7 @@ Code from:
 https://github.com/lonePatient/BERT-NER-Pytorch/blob/master/models/layers/crf.py
 we adopted it as baseline for unit test
 """
+
 import torch
 import torch.nn as nn
 from typing import List, Optional

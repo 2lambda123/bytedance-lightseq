@@ -1,6 +1,7 @@
 """
 Export Hugging Face GPT2 models to hdf5 format.
 """
+
 import __init__
 import os
 import h5py

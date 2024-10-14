@@ -1,6 +1,7 @@
 """
 Export Hugging Face T5 models to protobuf/hdf5 format.
 """
+
 import os
 from collections import OrderedDict
 
@@ -351,9 +352,9 @@ def extract_transformer_weights(
         .tolist()
     )
 
-    transformer.trg_embedding.position_embedding[
-        :
-    ] = decoder_relative_attention_bias_list
+    transformer.trg_embedding.position_embedding[:] = (
+        decoder_relative_attention_bias_list
+    )
     print(
         "decoder.block.0.layer.0.SelfAttention.relative_attention_bias.weight -> trg_embedding.position_embedding, shape: {}, conversion finished!".format(
             decoder_state_dict[

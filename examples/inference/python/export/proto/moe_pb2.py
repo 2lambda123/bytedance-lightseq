@@ -1402,7 +1402,7 @@ MoeEncoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MOEENCODERLAYER,
-        "__module__": "moe_pb2"
+        "__module__": "moe_pb2",
         # @@protoc_insertion_point(class_scope:MoeEncoderLayer)
     },
 )
@@ -1413,7 +1413,7 @@ MoeDecoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MOEDECODERLAYER,
-        "__module__": "moe_pb2"
+        "__module__": "moe_pb2",
         # @@protoc_insertion_point(class_scope:MoeDecoderLayer)
     },
 )
@@ -1424,7 +1424,7 @@ MoeEmbeddingLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MOEEMBEDDINGLAYER,
-        "__module__": "moe_pb2"
+        "__module__": "moe_pb2",
         # @@protoc_insertion_point(class_scope:MoeEmbeddingLayer)
     },
 )
@@ -1435,7 +1435,7 @@ MoeModelConf = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MOEMODELCONF,
-        "__module__": "moe_pb2"
+        "__module__": "moe_pb2",
         # @@protoc_insertion_point(class_scope:MoeModelConf)
     },
 )
@@ -1446,7 +1446,7 @@ Moe = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MOE,
-        "__module__": "moe_pb2"
+        "__module__": "moe_pb2",
         # @@protoc_insertion_point(class_scope:Moe)
     },
 )

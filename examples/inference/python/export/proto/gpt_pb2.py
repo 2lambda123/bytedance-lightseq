@@ -598,7 +598,7 @@ GptEncoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _GPTENCODERLAYER,
-        "__module__": "gpt_pb2"
+        "__module__": "gpt_pb2",
         # @@protoc_insertion_point(class_scope:GptEncoderLayer)
     },
 )
@@ -609,7 +609,7 @@ GptEmbeddingLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _GPTEMBEDDINGLAYER,
-        "__module__": "gpt_pb2"
+        "__module__": "gpt_pb2",
         # @@protoc_insertion_point(class_scope:GptEmbeddingLayer)
     },
 )
@@ -620,7 +620,7 @@ GptModelConf = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _GPTMODELCONF,
-        "__module__": "gpt_pb2"
+        "__module__": "gpt_pb2",
         # @@protoc_insertion_point(class_scope:GptModelConf)
     },
 )
@@ -631,7 +631,7 @@ Gpt = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _GPT,
-        "__module__": "gpt_pb2"
+        "__module__": "gpt_pb2",
         # @@protoc_insertion_point(class_scope:Gpt)
     },
 )
