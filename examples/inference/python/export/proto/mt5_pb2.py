@@ -1263,7 +1263,7 @@ MT5EncoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MT5ENCODERLAYER,
-        "__module__": "mt5_pb2"
+        "__module__": "mt5_pb2",
         # @@protoc_insertion_point(class_scope:MT5EncoderLayer)
     },
 )
@@ -1274,7 +1274,7 @@ MT5DecoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MT5DECODERLAYER,
-        "__module__": "mt5_pb2"
+        "__module__": "mt5_pb2",
         # @@protoc_insertion_point(class_scope:MT5DecoderLayer)
     },
 )
@@ -1285,7 +1285,7 @@ MT5EmbeddingLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MT5EMBEDDINGLAYER,
-        "__module__": "mt5_pb2"
+        "__module__": "mt5_pb2",
         # @@protoc_insertion_point(class_scope:MT5EmbeddingLayer)
     },
 )
@@ -1296,7 +1296,7 @@ MT5ModelConf = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MT5MODELCONF,
-        "__module__": "mt5_pb2"
+        "__module__": "mt5_pb2",
         # @@protoc_insertion_point(class_scope:MT5ModelConf)
     },
 )
@@ -1307,7 +1307,7 @@ MT5 = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _MT5,
-        "__module__": "mt5_pb2"
+        "__module__": "mt5_pb2",
         # @@protoc_insertion_point(class_scope:MT5)
     },
 )

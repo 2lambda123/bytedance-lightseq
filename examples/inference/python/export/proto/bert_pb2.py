@@ -579,7 +579,7 @@ BertEncoderLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _BERTENCODERLAYER,
-        "__module__": "bert_pb2"
+        "__module__": "bert_pb2",
         # @@protoc_insertion_point(class_scope:BertEncoderLayer)
     },
 )
@@ -590,7 +590,7 @@ BertEmbeddingLayer = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _BERTEMBEDDINGLAYER,
-        "__module__": "bert_pb2"
+        "__module__": "bert_pb2",
         # @@protoc_insertion_point(class_scope:BertEmbeddingLayer)
     },
 )
@@ -601,7 +601,7 @@ BertModelConf = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _BERTMODELCONF,
-        "__module__": "bert_pb2"
+        "__module__": "bert_pb2",
         # @@protoc_insertion_point(class_scope:BertModelConf)
     },
 )
@@ -612,7 +612,7 @@ Bert = _reflection.GeneratedProtocolMessageType(
     (_message.Message,),
     {
         "DESCRIPTOR": _BERT,
-        "__module__": "bert_pb2"
+        "__module__": "bert_pb2",
         # @@protoc_insertion_point(class_scope:Bert)
     },
 )

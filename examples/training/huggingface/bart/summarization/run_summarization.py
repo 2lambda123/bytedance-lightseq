@@ -456,17 +456,21 @@ def main():
     # The .from_pretrained methods guarantee that only one local process can concurrently
     # download model & vocab.
     config = AutoConfig.from_pretrained(
-        model_args.config_name
-        if model_args.config_name
-        else model_args.model_name_or_path,
+        (
+            model_args.config_name
+            if model_args.config_name
+            else model_args.model_name_or_path
+        ),
         cache_dir=model_args.cache_dir,
         revision=model_args.model_revision,
         use_auth_token=True if model_args.use_auth_token else None,
     )
     tokenizer = AutoTokenizer.from_pretrained(
-        model_args.tokenizer_name
-        if model_args.tokenizer_name
-        else model_args.model_name_or_path,
+        (
+            model_args.tokenizer_name
+            if model_args.tokenizer_name
+            else model_args.model_name_or_path
+        ),
         cache_dir=model_args.cache_dir,
         use_fast=model_args.use_fast_tokenizer,
         revision=model_args.model_revision,
@@ -754,9 +758,9 @@ def main():
         eval_dataset=eval_dataset if training_args.do_eval else None,
         tokenizer=tokenizer,
         data_collator=data_collator,
-        compute_metrics=compute_metrics
-        if training_args.predict_with_generate
-        else None,
+        compute_metrics=(
+            compute_metrics if training_args.predict_with_generate else None
+        ),
     )
 
     # Training
@@ -847,9 +851,9 @@ def main():
         kwargs["dataset_tags"] = data_args.dataset_name
         if data_args.dataset_config_name is not None:
             kwargs["dataset_args"] = data_args.dataset_config_name
-            kwargs[
-                "dataset"
-            ] = f"{data_args.dataset_name} {data_args.dataset_config_name}"
+            kwargs["dataset"] = (
+                f"{data_args.dataset_name} {data_args.dataset_config_name}"
+            )
         else:
             kwargs["dataset"] = data_args.dataset_name
 
