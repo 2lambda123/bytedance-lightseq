@@ -16,7 +16,7 @@
 #
 
 
-"""Implement a clip module as pytorch only has a simple clamp function """
+"""Implement a clip module as pytorch only has a simple clamp function"""
 import torch
 from torch import nn
 from torch.nn.parameter import Parameter
